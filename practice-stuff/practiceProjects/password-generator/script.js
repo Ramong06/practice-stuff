@@ -5,7 +5,7 @@ var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?',
 var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i',  'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCasedCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-// must prompt user for password options
+// must prompt user for password choices
 const getPasswordOptions = () => {
   var length = parseInt(prompt('How many characters?'));
 
@@ -62,6 +62,48 @@ const getRandom = (arr) => {
 
   return randElement;
 }
+
+// Function to generate password with user input
+const generatePassword = () => {
+  var options = getPasswordOptions();
+  //Variable to store password as it's being concatenated.
+  var result = [];
+  //Array to contain one of each type of chosen character to ensure each will be used
+  var possibleCharacters = [];
+  //Array to contain one of each type of chosen character to ensure each will be used
+  var guaranteedCharacters = [];
+
+  //conditional that adds array of special characters into array of possible characters based on user input
+  // push new random special character to guaranteedCharacters
+  if (options.hasSpecialCharacters) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+    guaranteedCharacters.push(getRandom(specialCharacters));
+  }
+
+  if (options.hasNumericCharacters) {
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
+    guaranteedCharacters.push(getRandom(numericCharacters));
+  }
+
+  if (options.hasUpperCasedCharacters) {
+    possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+    guaranteedCharacters.push(getRandom(upperCasedCharacters));
+  }
+
+  if (options.hasLowerCasedCharacters) {
+    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+    guaranteedCharacters.push(getRandom(lowerCasedCharacters));
+  }
+
+  for (var i = 0; i < options.length; i++) {
+    var possibleCharacter = getRandom(possibleCharacters);
+
+    result.push(possibleCharacter);
+  }
+
+  return result.join('');
+
+};
 
 
 
