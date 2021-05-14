@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Bands</title>
+</head>
+<body>
+    
+    <script>
+
+        // An array used to store a list of my favorite bands
+        var myBands = ["breaking benjamin", "chevelle", "seether", "slipknot", "prince"];
+
+        // A variable that create's a prompt to ask the user for my favorite band.
+        var userGuess = prompt("Guess My Favorite Band");
+
+        // Changes to the user guess to all lowercase letters
+        var userGuessLower = userGuess.toLowerCase();
+
+        // Checks if the users guess after being converted to lowercase matches any index within the array. if it doesn't then it equals -1 because -1 is not an index within the array so it alerts Nope, they suck.
+        if (myBands.indexOf(userGuessLower) === -1) {
+            alert("Nope, they suck");
+        // if the user's guess matches an index of the array this will alert YUP! I love them!
+        }else {
+            alert("YUP! I love them!");
+        }
+
+
+
+    </script>
+</body>
+</html>

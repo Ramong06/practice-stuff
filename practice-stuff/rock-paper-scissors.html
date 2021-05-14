@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <h1>OPEN THE DAMN CONSOLE TO SEE THE MAGIK BRUH!</h1>
+    <script>
+
+        // Variable to hold all possible choices
+        var compOptions = [ "rock", "paper", "scissors" ];
+
+        // Variables to hold the number of wins, losses and ties.  All will start with int 0.
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+
+        for (var i = 0; i < 10; i++) {
+            // Randomly chooses a choice from the options array. This is the Computer's guess.
+            var compGuess = compOptions[Math.floor(Math.random() * compOptions.length)];
+
+            // Tests if the computer guess is working properly
+            console.log(compGuess);
+
+            // Collects users response and convert to Lower Case.
+            var userGuess = prompt("Enter rock, paper, or scissors to play.");
+            userGuess = userGuess.toLowerCase();
+        };
+
+
+    </script>
+</body>
+</html>
